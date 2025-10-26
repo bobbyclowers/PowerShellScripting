@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://twcau.github.io/PowerShellScripting/sitemap.xml.gz
