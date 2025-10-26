@@ -1,5 +1,5 @@
 input: .website
-output: githubpages
+output: docs
 
 url: twcau.github.io/PowerShellScripting # Use your website address here
 
