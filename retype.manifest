@@ -1,0 +1,599 @@
+{
+  "version": "3.11.0",
+  "created": "2025-10-26T17:00:54Z",
+  "files": [
+    {
+      "path": ".nojekyll"
+    },
+    {
+      "path": "404.html"
+    },
+    {
+      "path": "assets\\favicon.ico"
+    },
+    {
+      "path": "assets\\logo.png"
+    },
+    {
+      "path": "buy-me-a-kofi\\index.html"
+    },
+    {
+      "path": "changelog\\index.html"
+    },
+    {
+      "path": "code\\ad\\computer\\findmachineou\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\creation\\ad-copygroups\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\creation\\user-creation-bulk\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\creation\\user-creation\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\creation\\user-departure\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\reconcillation\\ad-bulk-departedemployeereconcillation\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\reconcillation\\employee-departure-reconciliation\\index.html"
+    },
+    {
+      "path": "code\\ad\\user\\reconcillation\\employee-listing\\index.html"
+    },
+    {
+      "path": "code\\e365\\e365-mailbox-converttoshared\\index.html"
+    },
+    {
+      "path": "code\\e365\\e365-quarantine-exportrecord\\index.html"
+    },
+    {
+      "path": "code\\e365\\exchange-quarantinetabl-datadownload\\index.html"
+    },
+    {
+      "path": "code\\e365\\newtransportruleexecname\\index.html"
+    },
+    {
+      "path": "code\\entra\\automatecompromisedaccountremediation\\index.html"
+    },
+    {
+      "path": "code\\entra\\entra-userexternal-create\\index.html"
+    },
+    {
+      "path": "code\\entra\\user-management-external\\index.html"
+    },
+    {
+      "path": "code\\general\\module-management\\module-powershell7-require\\index.html"
+    },
+    {
+      "path": "code\\general\\module-management\\update-module\\index.html"
+    },
+    {
+      "path": "code\\general\\password-generation\\password-generator-silent\\index.html"
+    },
+    {
+      "path": "code\\general\\password-generation\\password-generator\\index.html"
+    },
+    {
+      "path": "code\\general\\scriptselector\\index.html"
+    },
+    {
+      "path": "code\\index.html"
+    },
+    {
+      "path": "code\\intune\\devices\\intune-bulksync\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\m365-version-detect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\m365-version-remediate\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\m365-version\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\m365-versiondetect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\m365-versionremediate\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\teams-old\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\teamsold-detect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\teamsold-remediate\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\teamsold\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-23h2to24h2force-detect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-23h2to24h2force-remediate\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-23h2to24h2force\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-detect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-outstanding-detect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-outstanding-remediate\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-outstanding\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-pause-detect\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-pause-remediate\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-pause\\index.html"
+    },
+    {
+      "path": "code\\intune\\remediation\\winupdate-remediate\\index.html"
+    },
+    {
+      "path": "code\\modules\\index.html"
+    },
+    {
+      "path": "code\\onedrive\\m365-onedriveforbusiness-user-filedownload\\index.html"
+    },
+    {
+      "path": "code\\onedrive\\m365-onedriveforbusiness-user-fileupload\\index.html"
+    },
+    {
+      "path": "contributing\\index.html"
+    },
+    {
+      "path": "docs\\404.html",
+      "old": true
+    },
+    {
+      "path": "docs\\assets\\favicon.ico",
+      "old": true
+    },
+    {
+      "path": "docs\\assets\\logo.png",
+      "old": true
+    },
+    {
+      "path": "docs\\buy-me-a-kofi\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\contributing\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\issues\\knownissues\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\issues\\todo\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\license\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\project-overview\\design-philosophy\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\project-overview\\folder-structure\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\project-overview\\idea\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\project-overview\\specification\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\css\\retype.css",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\fonts\\inter-italic-latin-var.woff2",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\fonts\\inter-roman-latin-var.woff2",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\js\\config.js",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\js\\lunr.js",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\js\\prism.js",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\js\\retype.js",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\js\\search.json",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\lunr.js.license.txt",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\mermaid.js.license.txt",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\prism.js.license.txt",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\retype.js.license.txt",
+      "old": true
+    },
+    {
+      "path": "docs\\resources\\retype.license.txt",
+      "old": true
+    },
+    {
+      "path": "docs\\robots.txt",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\computer\\findmachineou\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\creation\\ad-copygroups\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\creation\\user-creation-bulk\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\creation\\user-creation\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\creation\\user-departure\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\reconcillation\\ad-bulk-departedemployeereconcillation\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\reconcillation\\employee-departure-reconciliation\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\ad\\user\\reconcillation\\employee-listing\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\e365\\e365-mailbox-converttoshared\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\e365\\e365-quarantine-exportrecord\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\e365\\exchange-quarantinetabl-datadownload\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\e365\\newtransportruleexecname\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\entra\\automatecompromisedaccountremediation\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\entra\\entra-userexternal-create\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\entra\\user-management-external\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\general\\module-management\\module-powershell7-require\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\general\\module-management\\update-module\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\general\\password-generation\\password-generator-silent\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\general\\password-generation\\password-generator\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\general\\scriptselector\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\intune\\devices\\intune-bulksync\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\intune\\remediation\\m365-version\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\intune\\remediation\\teams-old\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\intune\\remediation\\winupdate-23h2to24h2force\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\intune\\remediation\\winupdate-outstanding\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\intune\\remediation\\winupdate-pause\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\onedrive\\m365-onedriveforbusiness-user-filedownload\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\scripts\\onedrive\\m365-onedriveforbusiness-user-fileupload\\index.html",
+      "old": true
+    },
+    {
+      "path": "docs\\support\\index.html",
+      "old": true
+    },
+    {
+      "path": "favicon.ico"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "issues\\knownissues\\index.html"
+    },
+    {
+      "path": "issues\\todo\\index.html"
+    },
+    {
+      "path": "license",
+      "old": true
+    },
+    {
+      "path": "license\\index.html"
+    },
+    {
+      "path": "project-overview\\design-philosophy\\index.html"
+    },
+    {
+      "path": "project-overview\\folder-structure\\index.html"
+    },
+    {
+      "path": "project-overview\\idea\\index.html"
+    },
+    {
+      "path": "project-overview\\specification\\index.html"
+    },
+    {
+      "path": "resources\\css\\retype.css"
+    },
+    {
+      "path": "resources\\fonts\\Inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "resources\\fonts\\Inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "resources\\js\\config.js"
+    },
+    {
+      "path": "resources\\js\\lunr.js"
+    },
+    {
+      "path": "resources\\js\\prism.js"
+    },
+    {
+      "path": "resources\\js\\retype.js"
+    },
+    {
+      "path": "resources\\js\\search.json"
+    },
+    {
+      "path": "resources\\lunr.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\mermaid.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\prism.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\retype.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\retype.LICENSE.txt"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "scripts\\ad\\computer\\findmachineou\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\creation\\ad-copygroups\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\creation\\user-creation-bulk\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\creation\\user-creation\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\creation\\user-departure\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\reconcillation\\ad-bulk-departedemployeereconcillation\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\reconcillation\\employee-departure-reconciliation\\index.html"
+    },
+    {
+      "path": "scripts\\ad\\user\\reconcillation\\employee-listing\\index.html"
+    },
+    {
+      "path": "scripts\\e365\\e365-mailbox-converttoshared\\index.html"
+    },
+    {
+      "path": "scripts\\e365\\e365-quarantine-exportrecord\\index.html"
+    },
+    {
+      "path": "scripts\\e365\\exchange-quarantinetabl-datadownload\\index.html"
+    },
+    {
+      "path": "scripts\\e365\\newtransportruleexecname\\index.html"
+    },
+    {
+      "path": "scripts\\entra\\automatecompromisedaccountremediation\\index.html"
+    },
+    {
+      "path": "scripts\\entra\\entra-userexternal-create\\index.html"
+    },
+    {
+      "path": "scripts\\entra\\user-management-external\\index.html"
+    },
+    {
+      "path": "scripts\\general\\module-management\\module-powershell7-require\\index.html"
+    },
+    {
+      "path": "scripts\\general\\module-management\\update-module\\index.html"
+    },
+    {
+      "path": "scripts\\general\\password-generation\\password-generator-silent\\index.html"
+    },
+    {
+      "path": "scripts\\general\\password-generation\\password-generator\\index.html"
+    },
+    {
+      "path": "scripts\\general\\scriptselector\\index.html"
+    },
+    {
+      "path": "scripts\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\devices\\intune-bulksync\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\m365-version\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\teams-old\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage.redirect\\index.html",
+      "old": true
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\changelog\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\detection\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\example-logs\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\functions\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\intune-setup\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\references\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\remediation-logic\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\remediation\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\win-storage\\troubleshooting\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\winupdate-23h2to24h2force\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\winupdate-outstanding\\index.html"
+    },
+    {
+      "path": "scripts\\intune\\remediation\\winupdate-pause\\index.html"
+    },
+    {
+      "path": "scripts\\onedrive-sharepoint\\onedrive-sharepont-uploaddownload\\index.html"
+    },
+    {
+      "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "support\\index.html"
+    },
+    {
+      "path": "user-guides\\backup-and-restore\\index.html"
+    },
+    {
+      "path": "user-guides\\getting-started\\index.html"
+    },
+    {
+      "path": "user-guides\\menu-structure\\index.html"
+    },
+    {
+      "path": "user-guides\\testing\\index.html"
+    }
+  ]
+}

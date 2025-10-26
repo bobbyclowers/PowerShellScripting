@@ -1,0 +1,18 @@
+# Folders
+.archive
+.github/instructions/
+.website/
+vscode/
+testing/
+tools/
+scripts/
+**/tests
+**/.version
+
+# Files
+PowerShellScripting.code-workspace
+.DS_Store
+*.bak
+analysis.json
+*-report.txt
+*-output.json

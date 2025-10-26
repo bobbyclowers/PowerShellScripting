@@ -1,0 +1,24 @@
+input: .website
+output: githubpages
+
+url: twcau.github.io/PowerShellScripting # Use your website address here
+
+start:
+  # Uncomment the next line to try Retype Pro features
+  pro: true
+
+branding:
+  title: PowerShellScripting
+  label: Docs
+
+links:
+  - text: Code
+    link: https://github.com/twcau/PowerShellScripting/
+  - text: License
+    link: https://github.com/twcau/PowerShellScripting/tree/main?tab=GPL-3.0-1-ov-file#readme
+footer:
+  copyright: "&copy; Copyright {{ year }}, Michael Harris. All rights reserved."
+  links: # A list of links to include in the footer
+    # See also: links
+    - text: License # The text to use for the link
+      link: https://github.com/twcau/PowerShellScripting/tree/main?tab=GPL-3.0-1-ov-file#readme # Point to an internal file or external URL
