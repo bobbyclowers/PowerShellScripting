@@ -10,7 +10,7 @@ scripts/
 **/.version
 
 # Files
-PowerShellScripting.code-workspace
+*.code-workspace
 .DS_Store
 *.bak
 analysis.json
