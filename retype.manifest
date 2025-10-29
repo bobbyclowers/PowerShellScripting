@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-10-29T10:06:47Z",
+  "created": "2025-10-29T10:30:09Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -313,7 +313,8 @@
       "path": "scripts\\ad\\user\\creation\\user-departure\\index.html"
     },
     {
-      "path": "scripts\\ad\\user\\reconcillation\\ad-bulk-departedemployeereconcillation\\index.html"
+      "path": "scripts\\ad\\user\\reconcillation\\ad-bulk-departedemployeereconcillation\\index.html",
+      "old": true
     },
     {
       "path": "scripts\\ad\\user\\reconcillation\\employee-departure-reconciliation\\index.html"

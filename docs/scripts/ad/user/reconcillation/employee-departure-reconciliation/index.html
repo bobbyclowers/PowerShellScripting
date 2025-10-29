@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/PowerShellScripting">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815047603756">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815049006535">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../../../favicon.ico" rel="icon">
-    <link href="../../../../../resources/css/retype.css?v=3.11.0.815047603756" rel="stylesheet">
+    <link href="../../../../../resources/css/retype.css?v=3.11.0.815049006535" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../../resources/js/config.js?v=3.11.0.815047603756" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../../resources/js/config.js?v=3.11.0.815049006535" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../../resources/js/lunr.js?v=3.11.0.815047603756" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../../resources/js/prism.js?v=3.11.0.815047603756" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../../resources/js/lunr.js?v=3.11.0.815049006535" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../../resources/js/prism.js?v=3.11.0.815049006535" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -246,7 +246,8 @@
         <span>Purpose</span>
     </h2>
 </doc-anchor-target>
-<p>Automates the reconciliation of a single departed employee in Active Directory using a CSV file from People Services. Validates if the person is still active, disables the account if needed, logs actions, and provides clear instructions for ICT follow-up and asset checks.</p>
+<p>Automates reconciliation for departed employees using a CSV file, normally provided by a HR Department or similar, that dropped into a configured folder.</p>
+<p>The script validates if an account of a departed employee is still active (by EmployeeID), disables that account, writes a dated report CSV, records any failures requiring manual follow-up to a separate failure CSV, and moves the processed CSV to a &quot;Complete&quot; folder.</p>
 <doc-anchor-target id="dependencies">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#dependencies">#</doc-anchor-trigger>
@@ -256,6 +257,7 @@
 <ul>
 <li><strong>Active Directory module</strong> (<a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/" class="outbound" target="_blank"><span>Microsoft Docs</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>)</li>
 </ul>
+<p>The script requires an account with permission to query and disable accounts in on-premises Active Directory.</p>
 <doc-anchor-target id="function">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#function">#</doc-anchor-trigger>
@@ -263,17 +265,21 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Prompts for and selects the correct CSV file from a designated folder.</li>
-<li>Imports the CSV and iterates through each employee record.</li>
-<li>For each employee:
+<li>Selects the latest (or user-selected) CSV from the configured source folder.</li>
+<li>Imports the CSV and iterates through each row.</li>
+<li>For each row:
 <ul>
-<li>Checks if the AD account is still active (enabled).</li>
-<li>If active, disables the account and logs details (employee ID, name, manager, etc.) to a dated report file.</li>
-<li>Sets a flag if any accounts were disabled.</li>
+<li>Uses <code v-pre>detnumber</code> (EmployeeID) to find the AD account via <code v-pre>Get-ADUser</code>.</li>
+<li>If an AD account is found and is enabled, the script attempts to disable it (<code v-pre>Disable-ADAccount</code>).</li>
+<li>If a <code v-pre>managerEmployeeID</code> column exists in the CSV the script will attempt to resolve the manager by EmployeeID
+and include the manager&#x27;s name in the report. Manager lookup failures are recorded in the failure CSV.</li>
+<li>Successful actions are appended to a dated report CSV.</li>
+<li>Any AD query or operation failures are recorded to a dated failure CSV for manual follow-up.</li>
 </ul>
 </li>
-<li>At the end, provides actionable instructions for ICT if any accounts were disabled, including asset and ticket checks.</li>
-<li>Moves the processed CSV to a &quot;Complete&quot; folder and logs the operation.</li>
+<li>After processing all rows the script reports whether any accounts were disabled and prints the locations of the
+report and failure files.</li>
+<li>The processed CSV is moved to the configured &quot;Complete&quot; folder.</li>
 </ol>
 <doc-anchor-target id="usage">
     <h2>
@@ -294,6 +300,7 @@
 <ul>
 <li>User selection of CSV file from a folder (interactive prompt)</li>
 <li>CSV file must contain at least a <code v-pre>detnumber</code> column (employee ID)</li>
+<li>Optional: <code v-pre>managerEmployeeID</code> column if manager resolution is required</li>
 </ul>
 <doc-anchor-target id="variables">
     <h2>
@@ -306,6 +313,12 @@
 <li><code v-pre>$csvPath</code>: Path to the selected CSV file</li>
 <li><code v-pre>$DestinationFolderReport</code>: Path to the output report file</li>
 <li><code v-pre>$infoWrittenToCSV</code>: Flag indicating if any accounts were disabled</li>
+<li><code v-pre>$SourceDirectory</code>: Source folder for incoming CSV files (default V:\Employee-Departure-Check)</li>
+<li><code v-pre>$DestinationFolderReports</code>: Folder where report and failure CSVs are written</li>
+<li><code v-pre>$DestinationFolderComplete</code>: Folder where processed CSVs are moved</li>
+<li><code v-pre>$reportFile</code>: Dated report CSV (yyyyMMdd.csv)</li>
+<li><code v-pre>$failureFile</code>: Dated failure CSV (yyyyMMdd.failures.csv)</li>
+<li><code v-pre>$logFile</code>: Path to a timestamped log written to <code v-pre>$env:TEMP</code></li>
 </ul>
 <doc-anchor-target id="command-line-flags">
     <h2>
@@ -325,6 +338,10 @@
 <li>Logs details to a dated CSV report</li>
 <li>Provides actionable instructions for ICT follow-up if required</li>
 <li>Moves processed CSV to a &quot;Complete&quot; folder</li>
+<li>Dated report CSV containing processed rows: <code v-pre>&lt;ReportsFolder&gt;\&lt;yyyyMMdd&gt;.csv</code></li>
+<li>Dated failure CSV containing any items requiring manual follow up: <code v-pre>&lt;ReportsFolder&gt;\&lt;yyyyMMdd&gt;.failures.csv</code></li>
+<li>A plain-text log file in <code v-pre>%TEMP%</code> recording script steps and errors (Employee-Departure-Reconciliation.log)</li>
+<li>Processed CSV moved to the <code v-pre>&lt;Complete&gt;</code> folder</li>
 </ul>
 <doc-anchor-target id="notes">
     <h2>
@@ -336,6 +353,10 @@
 <li>Requires the Active Directory module</li>
 <li>CSV file must be placed in the correct folder and contain the required columns</li>
 <li>Script provides clear error messages and instructions for each step</li>
+<li>The script assumes CSV schema correctness (no additional input validation performed).</li>
+<li>The manager lookup is performed by searching AD for the manager&#x27;s EmployeeID (CSV column <code v-pre>managerEmployeeID</code>).</li>
+<li>The script will create the Reports and Complete folders if they do not exist.</li>
+<li>Any AD operation failures (query or disable) are recorded in the failure CSV to allow manual remediation.</li>
 </ul>
 
                                 
@@ -346,11 +367,11 @@
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../../scripts/ad/user/reconcillation/ad-bulk-departedemployeereconcillation/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../../scripts/ad/user/creation/user-departure/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">AD-​Bulk-​Departed​Employee​Reconcillation.​ps​1</span>
+                                                <span class="block mt-1">User-​Departure.​ps​1</span>
                                             </span>
                                         </a>
                                     </div>

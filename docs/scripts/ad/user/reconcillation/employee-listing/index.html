@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/PowerShellScripting">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815047603756">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.815049006535">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Employee-Listing.ps1</title>
     <meta name="title" content="Employee-Listing.ps1">
-    <meta name="description" content="Purpose">
+    <meta name="description" content="Say you have a HR system, which doesn't talk to AD (more than likely, especially in smaller and medium size companies).">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://twcau.github.io/PowerShellScripting/scripts/ad/user/reconcillation/employee-listing/">
@@ -21,23 +21,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://twcau.github.io/PowerShellScripting/scripts/ad/user/reconcillation/employee-listing/">
     <meta property="og:title" content="Employee-Listing.ps1">
-    <meta property="og:description" content="Purpose">
+    <meta property="og:description" content="Say you have a HR system, which doesn't talk to AD (more than likely, especially in smaller and medium size companies).">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://twcau.github.io/PowerShellScripting/scripts/ad/user/reconcillation/employee-listing/">
     <meta property="twitter:title" content="Employee-Listing.ps1">
-    <meta property="twitter:description" content="Purpose">
+    <meta property="twitter:description" content="Say you have a HR system, which doesn't talk to AD (more than likely, especially in smaller and medium size companies).">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../../../../favicon.ico" rel="icon">
-    <link href="../../../../../resources/css/retype.css?v=3.11.0.815047603756" rel="stylesheet">
+    <link href="../../../../../resources/css/retype.css?v=3.11.0.815049006535" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../../../resources/js/config.js?v=3.11.0.815047603756" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../../../resources/js/config.js?v=3.11.0.815049006535" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../../../resources/js/lunr.js?v=3.11.0.815047603756" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../../../resources/js/prism.js?v=3.11.0.815047603756" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../../../resources/js/lunr.js?v=3.11.0.815049006535" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../../../resources/js/prism.js?v=3.11.0.815049006535" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -229,8 +229,12 @@
         <span>Employee-Listing.ps1</span>
     </h1>
 </doc-anchor-target>
+<p>Say you have a HR system, which doesn&#x27;t talk to AD (more than likely, especially in smaller and medium size companies).</p>
+<p>Say you also want to keep your AD up-to-date with user information, manager information, or other relevant details - and do this with as little effort and as high automation as possible.</p>
+<p>This script gives you an idea how to do just that.</p>
 <ul>
 <li><doc-anchor-trigger to="#purpose">Purpose</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#prerequsites">Prerequsites</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#dependencies">Dependencies</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#function">Function</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#usage">Usage</doc-anchor-trigger></li>
@@ -247,6 +251,16 @@
     </h2>
 </doc-anchor-target>
 <p>Automates the process of updating Employee IDs and Manager relationships in Active Directory using a CSV file from People Services. Handles error reporting, file selection, and provides actionable feedback for any issues encountered.</p>
+<doc-anchor-target id="prerequsites">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequsites">#</doc-anchor-trigger>
+        <span>Prerequsites</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Make sure your AD records have the employee&#x27;s unique ID in your HR system populated into the relevant field within AD (this will help you keep the records aligned and in-sync between these systems)</li>
+<li>Make sure your HR team can give you a regular export of information in a specific format and structure.</li>
+</ul>
 <doc-anchor-target id="dependencies">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#dependencies">#</doc-anchor-trigger>
